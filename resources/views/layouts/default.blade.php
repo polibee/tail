@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <title>@yield('title', 'Weibo App') - Laravel 入门教程</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
-    <title>@yield('title','Weibo')-Laravel新手项目</title>
-
 </head>
-<body class="bg-gray-100">
+
+<body>
 @include('layouts._header')
-<div class="container mx-auto p-6">
-    <div class="md:mx-auto md:flex md:flex-col md:w-full md:max-w-s-screen-md">
-        <div class="md:mx-auto md:w-full md:flex md:flex-col md:items-center md:justify-center">
-            <div class="w-full md:w-2/3">
-                @yield('content')
-            </div>
-        </div>
+
+<div class="container mx-auto">
+    <div class="md:offset-1 md:col-span-10">
+        @include('shared._messages')
+        @yield('content')
+        @include('layouts._footer')
     </div>
-    @include('layouts._footer')
 </div>
-
-
 </body>
 </html>
