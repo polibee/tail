@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function gravatar($size='100')
+    {
+        $hash=md5(strtolower(trim($this->attributes['email'])));
+        return 'https://i2.wp.com/gravatar.loli.net/avatar/?ssl=1';
+    }
 }
