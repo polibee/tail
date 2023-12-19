@@ -22,7 +22,8 @@
                         <label for="password" class="block text-gray-700">密码：</label>
                         <input type="password" name="password" class="form-input mt-1 block w-full" value="{{ old('password') }}">
                     </div>
-
+                    <input type="checkbox" checked="checked" class="checkbox" name="remember" id="exampleCheck1" />
+                    <label class="checkbox" for="exampleCheck1">记住密码</label>
                     <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">登录</button>
                 </form>
 
