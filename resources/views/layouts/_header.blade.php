@@ -7,7 +7,7 @@
             <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
         </div>
         @if (Auth::check())
-            <a class="btn btn-ghost" href="#">用户列表</a>
+            <a class="btn btn-ghost" href="{{route('users.index')}}">用户列表</a>
 
         <div class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
