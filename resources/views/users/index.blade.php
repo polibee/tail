@@ -14,5 +14,14 @@
                 </div>
             @endforeach
         </div>
+
+        <div class="pagination">
+            @foreach ($users->links()->elements[0] as $page => $url)
+                <input class="pagination-item btn btn-square" type="radio" name="options" aria-label="{{ $page }}"
+                       {{ $users->currentPage() === $page ? 'checked' : '' }}
+                       onclick="window.location.href='{{ $url }}'" />
+            @endforeach
+        </div>
+
     </div>
 @endsection
