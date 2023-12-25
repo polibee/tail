@@ -76,7 +76,17 @@ class PasswordController extends Controller
         session()-flash('success','密码重置成功，请使用新密码登录。');
         return redirect()->route('login');
     }
-    session()->flash('danger','未找到重置记录')；
+    session()->flash('danger','未找到重置记录');
     return redirect()->back();
     }
+    public function __construct()
+    {
+        $this->middleware('throttle:2.1',[
+            'only'=>['showLinkRequestForm']
+        ]);
+        $this->middleware('throttle:3,10',[
+            'only'=>['sendResetLinkEmail']
+        ]);
+    }
+
 }

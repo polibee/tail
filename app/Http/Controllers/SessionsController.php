@@ -46,5 +46,12 @@ class SessionsController extends Controller
         $this->middleware('guest',[
             'only'=>['create']
         ]);
+        $this->middleware('guest',[
+            'only'=>['create']
+        ]);
+        $this->middleware('throttle:10,10',[
+            'only'=>['store']
+        ]);
     }
+
 }
