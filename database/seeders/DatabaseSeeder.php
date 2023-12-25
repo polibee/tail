@@ -20,19 +20,16 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        //Model::unguard();
-        //$this->call(UsersTableSeeder::class);
-        //Model::reguard();
-        //User::factory()->count(50)->create();
-        //$user=User::find(1);
-       // $user->name='coinowo';
-       // $user->email='coinowo@outlook.com';
-       // $user->is_admin=true;
-       // $user->password = Hash::make('qwert123');
-        //$user->save();
         Model::unguard();
         $this->call(UsersTableSeeder::class);
         $this->call(StatusesTableSeeder::class);
         Model::reguard();
+        $user=User::find(1);
+        $user->name='coinowo';
+        $user->email='coinowo@outlook.com';
+        $user->is_admin=true;
+        $user->password = Hash::make('qwert123');
+        $user->save();
+
     }
 }
