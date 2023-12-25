@@ -23,12 +23,16 @@ class DatabaseSeeder extends Seeder
         //Model::unguard();
         //$this->call(UsersTableSeeder::class);
         //Model::reguard();
-        User::factory()->count(50)->create();
-        $user=User::find(1);
-        $user->name='coinowo';
-        $user->email='coinowo@outlook.com';
-        $user->is_admin=true;
-        $user->password = Hash::make('qwert123');
-        $user->save();
+        //User::factory()->count(50)->create();
+        //$user=User::find(1);
+       // $user->name='coinowo';
+       // $user->email='coinowo@outlook.com';
+       // $user->is_admin=true;
+       // $user->password = Hash::make('qwert123');
+        //$user->save();
+        Model::unguard();
+        $this->call(UsersTableSeeder::class);
+        $this->call(StatusesTableSeeder::class);
+        Model::reguard();
     }
 }
